@@ -1,0 +1,84 @@
+query Order{
+
+    Global{
+
+        country_details(country:"us"){
+            ...country_details_complete
+        }
+        countries{
+            name
+            currencies{
+                code
+                convert(value:8.90) {
+                    code
+                    conversion_currency_code
+                    format
+                    from_code
+                    text
+                    value
+                }
+            }
+        }
+
+        codes
+    }
+    Currency{
+        codes
+    }
+}
+
+fragment country_details_complete on CountryDetails{
+    capital
+    code
+    continent { ...continent_details_complete }
+    currency_codes
+    currencies {
+
+    }
+    flag{ ...country_flag_emoji_complete }
+    languages{ ...language_details_complete }
+    name
+    native
+    phone_codes
+    timezones{ ...timezone_details_complete }
+}
+
+fragment currency_complete on Currency{
+    conversion_currency_code
+    code
+    format{ ...currency_format_complete }
+    from_code
+    text
+    value
+}
+
+fragment currency_format_complete{
+    code
+    decimal_digits
+    decimal_separator
+    space_between_amount_and_symbol
+    symbol
+    symbol_on_left
+    thousands_separator
+}
+
+fragment continent_details_complete on ContinentDetails{ code name }
+
+fragment country_flag_emoji_complete on CountryFlagEmoji{
+    code
+    emoji
+}
+
+fragment language_details_complete on LanguageDetails{
+    code
+    direction
+    name
+    native
+}
+
+fragment timezone_details_complete on TimezoneDetails{
+    countries
+    name
+    offset
+    utc_offset
+}

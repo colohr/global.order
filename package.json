@@ -1,0 +1,23 @@
+{
+  "name": "global.order",
+  "version": "0.0.1",
+  "description": "Global Order Tool",
+  "main": "package/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/colohr/global.order.git"
+  },
+  "author": {
+    "name": "colohr",
+    "email": "colohr.code@gmail.com"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/colohr/global.order/issues"
+  },
+  "homepage": "https://github.com/colohr/global.order#readme",
+  "dependencies": {
+    "countries-and-timezones": "^1.0.0",
+    "countries-list": "^2.3.1"
+  }
+}

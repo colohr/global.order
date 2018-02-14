@@ -1,0 +1,81 @@
+#Country flag information
+type CountryFlagEmoji{
+    #alpha-2 unicode
+    code: ID
+    #Emoji character
+    emoji: Text
+}
+
+#General information for a country
+type CountryDetails{
+    #Capital city name
+    capital: Text
+
+    #Country ISO 3166-1 alpha-2 code
+    code: ID!
+
+    #Continental region of country
+    continent: ContinentDetails
+
+    #Currency codes use in the country
+    currency_codes: TextList
+
+    #Country flag
+    flag: CountryFlagEmoji
+
+    #List of spoken languages
+    languages: [LanguageDetails]
+
+    #English name
+    name: Text!
+
+    #Native name
+    native: Text
+
+    #Prefix/prefixes used for telephone numbers
+    phone_codes: TextList
+
+    #List of timezones
+    timezones:[TimezoneDetails]
+}
+
+#Continent information
+type ContinentDetails{
+    #Identifier of continent
+    code: ID
+    #English name of the continet
+    name: Text
+}
+
+#Language information
+type LanguageDetails{
+    #Language ISO 639-1 code
+    code: ID
+    #Language direction
+    direction: LanguageDirection
+    #English name of language
+    name: Text
+    #Native name of language
+    native: Text
+}
+
+#Written direction of language
+enum LanguageDirection{
+    right_to_left
+    left_to_right
+    other
+}
+
+#Timezone information
+type TimezoneDetails{
+    #List of country ISO codes
+    countries: [ID]
+    #Name of timezone Continent/City
+    name: ID
+    #UTC offset in hours
+    offset: Text
+    #UTC offset in minutes
+    utc_offset: Number
+}
+
+

@@ -1,12 +1,6 @@
 module.exports = {
-	get bundle(){ return require('./bundle') },
-	get ChronologicalOrder(){ return require('./ChronologicalOrder') },
-	get Point(){ return require('./ChronologicalOrder') },
-	get share(){ return share_point }
-}
-
-//shared actions
-function share_point(){
-	const location = require('fxy').join(__dirname,'ChronologicalOrder')
-	return location
+	get continent(){ return require('./continent') },
+	get country(){ return require('./country') },
+	get Struct(){ return require('./Struct') },
+	get utility(){ return require('./utility') }
 }
