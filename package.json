@@ -1,6 +1,6 @@
 {
   "name": "global.order",
-  "version": "0.0.1",
+  "version": "0.0.101",
   "description": "Global Order Tool",
   "main": "package/index.js",
   "repository": {
